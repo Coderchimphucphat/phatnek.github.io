@@ -1,0 +1,222 @@
+/* Thiết lập chung */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Tiêu đề hồ sơ */
+.profile-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.profile-header img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #4caf50;
+    margin-bottom: 20px;
+}
+
+.profile-header h1 {
+    font-size: 28px;
+    color: #4caf50;
+    margin-bottom: 10px;
+}
+
+.profile-header p {
+    font-size: 16px;
+    color: #777;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tabs .tab {
+    padding: 10px 20px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    color: #333;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.tabs .tab.active {
+    background-color: #4caf50;
+    color: #fff;
+    border-color: #4caf50;
+}
+
+/* Nội dung tab */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Sản phẩm */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    font-size: 20px;
+    color: #4caf50;
+    margin-bottom: 10px;
+}
+
+.product-card .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.product-card .details {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.product-card button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #4caf50;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product-card button:hover {
+    background-color: #45a049;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #4caf50;
+    color: white;
+    font-size: 14px;
+    margin-top: 40px;
+}
+/* Mặc định cho màn hình lớn (máy tính bàn) */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Hiển thị 3 cột sản phẩm */
+    gap: 20px; /* Khoảng cách giữa các sản phẩm */
+}
+
+.product-card img {
+    width: 100%; /* Ảnh tự co giãn theo khung */
+    height: 200px; /* Chiều cao cố định, đồng bộ */
+    object-fit: cover; /* Cắt ảnh cho vừa khung */
+}
+
+.profile-header img {
+    width: 150px;
+    height: 150px; /* Ảnh đại diện lớn hơn trên máy tính */
+    border-radius: 50%; /* Giữ dạng tròn */
+}
+
+/* Responsive cho máy tính lớn hơn 1200px */
+@media (min-width: 1200px) {
+    .product-grid {
+        grid-template-columns: repeat(4, 1fr); /* Hiển thị 4 cột sản phẩm */
+    }
+
+    .profile-header img {
+        width: 200px; /* Ảnh đại diện lớn hơn */
+        height: 200px;
+    }
+
+    .profile-header h1 {
+        font-size: 28px; /* Tăng kích thước tiêu đề */
+    }
+
+    .profile-header p {
+        font-size: 18px; /* Tăng kích thước mô tả */
+    }
+}
+
+/* Responsive cho máy tính nhỏ hơn 768px (tablet) */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* Hiển thị 2 cột sản phẩm */
+    }
+
+    .product-card img {
+        height: 150px; /* Thu nhỏ chiều cao ảnh */
+    }
+
+    .profile-header h1 {
+        font-size: 22px; /* Thu nhỏ tiêu đề */
+    }
+
+    .profile-header p {
+        font-size: 14px; /* Thu nhỏ mô tả */
+    }
+}
+
+/* Responsive cho màn hình điện thoại (nhỏ hơn 480px) */
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr; /* Hiển thị 1 sản phẩm mỗi hàng */
+    }
+
+    .product-card img {
+        height: 120px; /* Ảnh nhỏ hơn nữa */
+    }
+
+    .tabs .tab {
+        font-size: 14px;
+        padding: 8px; /* Thu nhỏ nút tab */
+    }
+
+    .footer {
+        font-size: 12px; /* Thu nhỏ chữ trong footer */
+    }
+}

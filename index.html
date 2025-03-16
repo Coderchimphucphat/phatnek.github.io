@@ -1,0 +1,66 @@
+
+<div class="container">
+    <div class="profile-header">
+        <img src="https://i.imgur.com/nIbDMcH_d.webp" alt="Profile Picture">
+        <h1>Chím Phúc Phát <span class="verified-icon">✔</span></h1>
+        <p>Web Developer | Product Designer | Tech Enthusiast</p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+        <button class="tab active" onclick="showTab('featured-products')">Sản Phẩm Nổi Bật</button>
+        <button class="tab" onclick="showTab('latest-products')">Sản Phẩm Mới Nhất</button>
+    </div>
+
+    <!-- Tab Content -->
+    <div id="featured-products" class="tab-content active">
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://i.imgur.com/v3MmfTw.jpeg" alt="Product 1">
+                <h3>Sản Phẩm 1</h3>
+                <p class="price">Giá 200,000₫</p>
+                <p class="details">Đánh giá: 4.8/5 ⭐ | Đã bán: 1.2k+</p>
+                <button onclick="window.location.href='https://m.me/your-messenger-link'">Mua Ngay</button>
+            </div>
+            <div class="product-card">
+                <img src="https://i.imgur.com/v3MmfTw.jpeg" alt="Product 2">
+                <h3>Sản Phẩm 2</h3>
+                <p class="price">300,000₫</p>
+                <p class="details">Đánh giá: 4.7/5 ⭐ | Đã bán: 1.5k+</p>
+                <button onclick="window.location.href='https://m.me/your-messenger-link'">Mua Ngay</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="latest-products" class="tab-content">
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://i.imgur.com/v3MmfTw.jpeg" alt="Product 3">
+                <h3>Sản Phẩm 3</h3>
+                <p class="price">400,000₫</p>
+                <p class="details">Đánh giá: 4.9/5 ⭐ | Đã bán: 2.3k+</p>
+                <button onclick="window.location.href='https://m.me/your-messenger-link'">Mua Ngay</button>
+            </div>
+            <div class="product-card">
+                <img src="https://i.imgur.com/v3MmfTw.jpeg" alt="Product 4">
+                <h3>Sản Phẩm 4</h3>
+                <p class="price">500,000₫</p>
+                <p class="details">Đánh giá: 4.6/5 ⭐ | Đã bán: 1.1k+</p>
+                <button onclick="window.location.href='https://m.me/your-messenger-link'">Mua Ngay</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    © 2025 CHIM PHUC PHAT. All rights reserved.
+</div>
+
+<script>
+    function showTab(tabId) {
+        document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+        document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+        document.getElementById(tabId).classList.add('active');
+        document.querySelector(`button[onclick="showTab('${tabId}')"]`).classList.add('active');
+    }
+</script>
